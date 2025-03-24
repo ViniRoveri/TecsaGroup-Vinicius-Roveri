@@ -1,0 +1,25 @@
+services:
+  db: 
+    environment:
+      - MYSQL_DATABASE=database
+      - MYSQL_USER=viniroveri
+      - MYSQL_PASSWORD=123456
+      - MYSQL_ALLOW_EMPTY_PASSWORD=0
+    image: mysql:latest
+    volumes:
+      - data-volume:/var/lib/mysql
+  phpmyadmin:
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
+    image: phpmyadmin:latest
+    ports:
+      - 8001:80
+  www:
+    build: './'
+    ports:
+      - 9000:80
+    volumes:
+      - "./pages:/var/www/html"
+volumes:
+  data-volume:
