@@ -1,0 +1,11 @@
+.statusPendente{
+   background: linear-gradient(to top right, #ff000040, var(--amareloClaro) 40%);
+}
+
+.statusEmAndamento{
+   background: linear-gradient(to top right, #ff880080, var(--amareloClaro) 40%);
+}
+
+.statusConcluida{
+   background: linear-gradient(to top right, #00ff0040, var(--amareloClaro) 40%);
+}

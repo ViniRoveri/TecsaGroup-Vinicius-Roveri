@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+	--branco: #faf1e6;
+	--amareloClaro: #fff7cc;
+	--amarelo: #FFD700;
+	--amareloEscuro: #332b00;
+	--preto: #0a0601;
+}
+
+*{
+	border: none;
+	color: var(--amareloEscuro);
+	font-family: "Montserrat", sans-serif;
+	outline: none;
+	text-decoration: none !important;
+}
+
+body{
+	background-color: var(--amareloClaro);
+	height: 100vh;
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 2rem;
+}
+
+.card{
+	padding: 1rem;
+}
+
+h1{
+	font-size: 24px;
+	font-weight: bold;
+	margin: 0;
+	margin-bottom: 1rem;
+}
+
+h2, h3, p{
+	margin: 0;
+}
+
+::-webkit-scrollbar{
+   position: absolute;
+   height: 10px;
+   width: 10px;
+}
+::-webkit-scrollbar-track{
+   background: var(--branco);
+}
+::-webkit-scrollbar-thumb{
+   background: var(--amarelo);
+   border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover{
+   background: var(--amareloEscuro);
+}

@@ -20,6 +20,6 @@ services:
     ports:
       - 9000:80
     volumes:
-      - "./pages:/var/www/html"
+      - "./public:/var/www/html"
 volumes:
   data-volume:
