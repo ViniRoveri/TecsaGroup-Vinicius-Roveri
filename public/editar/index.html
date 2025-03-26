@@ -15,24 +15,26 @@
       <div class="card">
          <form class="m-0" id="formEditarTarefa">
             <div class="row">
-               <div class="col-6 col-sm-3 mb-2">
+               <div class="col-6 col-md-3 mb-2">
                   <div class="form-floating">
                      <input class="form-control" id="title" maxlength="80" placeholder="Título" required>
                      <label for="title">Título</label>
                   </div>
                </div>
 
-               <div class="col-6 col-sm-3 mb-2 rounded-2" style="border: 1px solid #dee2e6">
-                  <label class="mt-2 text-secondary" for="status" style="font-size: 14px; line-height: 10px;">Status</label>
-                  <select aria-label="Label" class="border-0 form-select shadow-none" id="status" required>
-                     <option selected value="">Selecione...</option>
-                     <option value="Pendente">Pendente</option>
-                     <option value="Em Andamento">Em Andamento</option>
-                     <option value="Concluída">Concluída</option>
-                  </select>
+               <div class="col-6 col-md-3 mb-2">
+                  <div class="rounded-2" style="border: 1px solid #dee2e6">
+                     <label class="mt-2 text-secondary" for="status" style="font-size: 14px; line-height: 10px; padding-left: 12px">Status</label>
+                     <select aria-label="Label" class="border-0 form-select shadow-none" id="status" required>
+                        <option selected value="">Selecione...</option>
+                        <option value="Pendente">Pendente</option>
+                        <option value="Em Andamento">Em Andamento</option>
+                        <option value="Concluída">Concluída</option>
+                     </select>
+                  </div>
                </div>
 
-               <div class="col-12 col-sm-6 mb-2">
+               <div class="col-12 col-md-6 mb-2">
                   <div class="form-floating">
                      <input class="form-control" id="description" maxlength="255" placeholder="Descrição" required>
                      <label for="title">Descrição</label>
