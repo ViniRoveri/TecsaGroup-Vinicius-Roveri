@@ -24,9 +24,9 @@ class TarefasController{
 
    private function get($database, $id){
       if($id == null){
-         echo json_encode($database->query('SELECT * FROM tarefas ORDER BY created_at'));
+         echo json_encode($database->query('SELECT * FROM tarefas ORDER BY created_at', []));
       }else{
-         $resposta = $database->query('SELECT * FROM tarefas WHERE id = '.$id);
+         $resposta = $database->query('SELECT * FROM tarefas WHERE id = ?', [$id]);
 
          if(count($resposta) != 0){
             echo json_encode($resposta[0]);
@@ -45,10 +45,9 @@ class TarefasController{
 
       $tempoAtual = date('Y-m-d');
 
-      $query = "INSERT INTO tarefas (title, description, status, created_at, updated_at) VALUES 
-      ('".$body['title']."', '".$body['description']."', '".$body['status']."', '".$tempoAtual."', '".$tempoAtual."')";
+      $query = "INSERT INTO tarefas (title, description, status, created_at, updated_at) VALUES (?, ?, ?, ?, ?)";
 
-      $database->executar($query);
+      $database->executar($query, [$body['title'], $body['description'], $body['status'], $tempoAtual, $tempoAtual]);
       echo json_decode(true);
    }
 
@@ -62,15 +61,15 @@ class TarefasController{
       $tempoAtual = date('Y-m-d');
 
       $query = "UPDATE tarefas SET 
-      title = '".$body['title']."', description = '".$body['description']."', status = '".$body['status']."', updated_at = '".$tempoAtual."'
-      WHERE id = ".$id;
+      title = ?, description = ?, status = ?, updated_at = ?
+      WHERE id = ?";
 
-      $database->executar($query);
+      $database->executar($query, [$body['title'], $body['description'], $body['status'], $tempoAtual, $id]);
       echo json_decode(true);
    }
 
    private function delete($database, $id){
-      $database->executar('DELETE FROM tarefas WHERE id = '.$id);
+      $database->executar('DELETE FROM tarefas WHERE id = ?', [$id]);
       echo json_decode(true);
    }
 }

@@ -1,7 +1,7 @@
 <?php
 
 class ErrorController{
-   public static function handler($erro){
+   public static function handleException($erro){
       http_response_code(500);
       
       echo json_encode([
@@ -10,5 +10,9 @@ class ErrorController{
          'arquivo' => $erro->getFile(),
          'linha' => $erro->getLine()
       ]);
+   }
+
+   public static function handleError($codigo, $mensagem, $arquivo, $linha){
+      throw new ErrorException($mensagem, 0, $codigo, $arquivo, $linha);
    }
 }

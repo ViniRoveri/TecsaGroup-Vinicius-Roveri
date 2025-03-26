@@ -8,7 +8,7 @@ $(document).ready(() => {
       $('#title').val(res.title)
       $('#description').val(res.description)
       $('#status').val(res.status).change()
-   })
+   }).catch(e => console.log(e))
 
    $('#formEditarTarefa').on('submit', e => {
       e.preventDefault()

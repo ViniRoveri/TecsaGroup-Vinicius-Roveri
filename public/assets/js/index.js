@@ -56,7 +56,7 @@ $(document).ready(() => {
       }
 
       $('#listaTarefas').html(htm)
-   })
+   }).catch(e => console.log(e))
 })
 
 function excluirTarefa(id){
@@ -73,7 +73,7 @@ function excluirTarefa(id){
             method: 'DELETE'
          }).done(() => {
             window.location.reload()
-         })
+         }).catch(e => console.log(e))
       }
    })
 }

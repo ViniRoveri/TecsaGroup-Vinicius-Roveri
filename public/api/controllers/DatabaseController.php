@@ -1,16 +1,16 @@
 <?php
 
 class DatabaseController {
-   public function query($query){
+   public function query($query, $params){
       $connect = mysqli_connect(
          'db',
          'viniroveri',
          '123456',
          'database'
       );
-      
-      $resposta = mysqli_query($connect, $query);
 
+      $resposta = $connect->execute_query($query, $params);
+      
       $rows = [];
         
       while ($row = mysqli_fetch_assoc($resposta)) {
@@ -20,7 +20,7 @@ class DatabaseController {
       return $rows;
    }
 
-   public function executar($query){
+   public function executar($query, $params){
       $connect = mysqli_connect(
          'db',
          'viniroveri',
@@ -28,6 +28,6 @@ class DatabaseController {
          'database'
       );
       
-      mysqli_query($connect, $query);
+      $connect->execute_query($query, $params);
    }
 }

@@ -15,6 +15,6 @@ $(document).ready(() => {
          contentType: "application/json"
       }).done(() => {
          window.location = '/'
-      })
+      }).catch(e => console.log(e))
    })
 })

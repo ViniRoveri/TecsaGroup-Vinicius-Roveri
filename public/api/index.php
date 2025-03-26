@@ -8,7 +8,8 @@ spl_autoload_register(function($classe){
    require __DIR__ . "/controllers/$classe.php";
 });
 
-set_exception_handler('ErrorController::handler');
+set_error_handler('ErrorController::handleError');
+set_exception_handler('ErrorController::handleException');
 
 $metodo = $_SERVER['REQUEST_METHOD'];
 $url = $_SERVER['REQUEST_URI'];
